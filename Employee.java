@@ -17,7 +17,4 @@ public class Employee {
         return scalePoint;
     }
 
-    public String getId() {
-        return id;
-    }
 }
