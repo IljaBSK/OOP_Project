@@ -17,4 +17,8 @@ public class Employee {
         return scalePoint;
     }
 
+    //superclass with login method
+    //admin subclass with AddEmployee method
+    //HR subclass with PromoteEmployee method
+    //Employee subclass above
 }
