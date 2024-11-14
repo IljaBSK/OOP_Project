@@ -1,3 +1,5 @@
+package JavaModule.src;
+
 public class Employee {
     private String id;
     private String jobType;
@@ -20,5 +22,5 @@ public class Employee {
     //superclass with login method
     //admin subclass with AddEmployee method
     //HR subclass with PromoteEmployee method
-    //Employee subclass above
+    //JavaModule.src.Employee subclass above
 }
