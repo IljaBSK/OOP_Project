@@ -1,6 +1,6 @@
 package JavaModule.src;
 
-public class Employee {
+public abstract class Employee {
     private String id;
     private String jobType;
     private int scalePoint;
@@ -18,6 +18,12 @@ public class Employee {
     public int getScalePoint() {
         return scalePoint;
     }
+
+    //Method for calculating pay
+    public abstract double calculateMonthlyPayment();
+
+    //Method for creating a payslip
+    public abstract void generatePayslip();
 
     //superclass with login method
     //admin subclass with AddEmployee method
