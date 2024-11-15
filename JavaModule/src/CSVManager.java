@@ -1,8 +1,6 @@
 package JavaModule.src;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.HashMap;
 
 public class CSVManager {
@@ -21,16 +19,29 @@ public class CSVManager {
                 String jobType = parts[0].trim();
                 String username = parts[1].trim();
                 String password = parts[2].trim();
-                users.put(username, new Employee(jobType, username, password));
+                users.put(username, new User(jobType, username, password));
             }
         }
         reader.close();
         return users;
     }
-}
 
-import java.io.*;
-        import java.util.Map;
+    public static void writeUsers(HashMap<String, User> users) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
+
+        // Write the header
+        writer.write("jobType,username,password");
+        writer.newLine();
+
+        // Write user data
+        for (User user : users.values()) {
+            writer.write(user.getJobType() + "," + user.getUsername() + "," + user.getPassword());
+            writer.newLine();
+        }
+        writer.close();
+    }
+
+}
 
 
 
