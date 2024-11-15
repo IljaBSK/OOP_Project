@@ -22,4 +22,5 @@ public class User{
     public String getJobType() {
         return jobType;
     }
+    //
 }

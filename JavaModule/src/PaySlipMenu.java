@@ -8,4 +8,5 @@ public class PaySlipMenu {
     public void run(LoginSystem login) throws IOException{
         User user = login.loginFunction();
     }
+    //
 }
