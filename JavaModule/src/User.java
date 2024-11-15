@@ -1,6 +1,6 @@
 package JavaModule.src;
 
-public abstract class User {
+public abstract class User extends LoginSystem {
     private String username;
     private String password;
     private String jobType;

@@ -1,9 +1,9 @@
 package JavaModule.src;
 
-public class Admin extends Employee {
+public class Admin extends User {
 
-    public Admin(String id, String jobType, int scalePoint) {
-        super(id, jobType, scalePoint);
+    public Admin(String username, String password, String jobType) {
+        super(username, password, jobType);
     }
 
     //public void addEmployee

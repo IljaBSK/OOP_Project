@@ -1,9 +1,9 @@
 package JavaModule.src;
 
-public class HR extends Employee {
+public class HR extends User {
 
-    public HR(String id, String jobType, int scalePoint) {
-        super(id, jobType, scalePoint);
+    public HR(String username, String password, String jobType) {
+        super(username, password, jobType);
     }
 
     //public void promoteEmployee
