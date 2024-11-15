@@ -42,5 +42,7 @@ public class LoginSystem {
        } else {
            System.out.println("Username not found.");
        }
+
+       return null;
    }
 }
