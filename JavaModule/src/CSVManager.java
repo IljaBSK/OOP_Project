@@ -41,6 +41,14 @@ public class CSVManager {
         writer.close();
     }
 
+    public static void appendUser(User user) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true)); // true for append mode
+
+        writer.write(user.getJobType() + "," + user.getUsername() + "," + user.getPassword());
+        writer.newLine();
+        writer.close();
+    }
+
 }
 
 
