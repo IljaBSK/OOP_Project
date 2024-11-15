@@ -1,5 +1,5 @@
 package JavaModule.src;
 
 public class PaySlipCalculator {
-    //will take salary from salaryscales class and calculate taxes and stuff
+    //will take salary from SalaryScales class and calculate taxes and stuff
 }
