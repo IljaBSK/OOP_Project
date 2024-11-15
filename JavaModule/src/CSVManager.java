@@ -19,7 +19,7 @@ public class CSVManager {
                 String jobType = parts[0].trim();
                 String username = parts[1].trim();
                 String password = parts[2].trim();
-                users.put(username, new User(jobType, username, password));
+                users.put(username, String.valueOf(new User(jobType, username, password)));
             }
         }
         reader.close();
