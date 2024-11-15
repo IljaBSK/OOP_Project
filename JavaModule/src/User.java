@@ -1,6 +1,6 @@
 package JavaModule.src;
 
-public class User extends LoginSystem {
+public class User {
     private String username;
     private String password;
     private String jobType;
