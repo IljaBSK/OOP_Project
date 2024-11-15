@@ -6,8 +6,8 @@ import java.util.HashMap;
 public class CSVManager {
     private static final String filename = "UserLogins.csv";
 
-    public static HashMap<String, String> readUsers() throws IOException{
-        HashMap<String, String> users = new HashMap<>();
+    public static HashMap<String, User> readUsers() throws IOException{
+        HashMap<String, User> users = new HashMap<>();
         BufferedReader reader = new BufferedReader(new FileReader(filename));
         String line;
 
@@ -19,7 +19,7 @@ public class CSVManager {
                 String jobType = parts[0].trim();
                 String username = parts[1].trim();
                 String password = parts[2].trim();
-                users.put(username, String.valueOf(new User(jobType, username, password)));
+                users.put(username, new User(jobType, username, password));
             }
         }
         reader.close();
