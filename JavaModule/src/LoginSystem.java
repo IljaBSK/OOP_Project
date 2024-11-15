@@ -28,5 +28,7 @@ public class LoginSystem {
        }else{
            System.out.println("Invalid input");
        }
+
+       return null;
    }
 }
