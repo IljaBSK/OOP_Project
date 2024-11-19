@@ -6,50 +6,40 @@ import java.util.HashMap;
 public class CSVManager {
     private static final String filename = "UserLogins.csv";
 
-    public static HashMap<String, User> readUsers() throws IOException{
+
+    public static HashMap<String, User> readValidUsers() {
         HashMap<String, User> users = new HashMap<>();
-        BufferedReader reader = new BufferedReader(new FileReader(filename));
-        String line;
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            reader.readLine();
 
-        reader.readLine();
+            String line;
 
-        while((line = reader.readLine()) != null){
-            String[] parts = line.split(",");
-            if(parts.length == 3){
-                String jobType = parts[0].trim();
-                String username = parts[1].trim();
-                String password = parts[2].trim();
-                users.put(username, new User(jobType, username, password));
+            while((line = reader.readLine()) != null){
+                String[] details = line.split(",");
+                if(details.length == 3){
+                    String userName = details[0].trim();
+                    String userPassword = details[1].trim();
+                    String userJob = details[2].trim();
+
+                    User newUser = new User(userName, userPassword, userJob);
+                    users.put(userName, newUser);
+                }else{
+                    System.out.println("Too many details input");
+                }
             }
+
+            reader.close();
+            return users;
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-        reader.close();
-        return users;
     }
-
-    public static void writeUsers(HashMap<String, User> users) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
-
-        // Write the header
-        writer.write("jobType,username,password");
-        writer.newLine();
-
-        // Write user data
-        for (User user : users.values()) {
-            writer.write(user.getJobType() + "," + user.getUsername() + "," + user.getPassword());
-            writer.newLine();
-        }
-        writer.close();
-    }
-
-    public static void appendUser(User user) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true)); // true for append mode
-
-        writer.write(user.getJobType() + "," + user.getUsername() + "," + user.getPassword());
-        writer.newLine();
-        writer.close();
-    }
-
 }
+
+
 
 
 
