@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.HashMap;
 
 public class CSVManager {
-    private static final String filename = "UserLogins.csv";
+    private static final String filename = "ValidLogins.csv";
 
 
     public static HashMap<String, User> readValidUsers() {
