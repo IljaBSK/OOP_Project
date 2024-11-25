@@ -9,7 +9,7 @@ public class Employee extends User {
     private String jobTitle;
     private int scalePoint;
 
-    // Fields to track the promotion status
+    //Fields to track the promotion status
     private String pendingPromotion;
     private boolean hasPendingPromotion;
 
@@ -29,6 +29,8 @@ public class Employee extends User {
         return name;
     }
 
+    public int getId(){return id;}
+
     public String getJobTitle() {
         return jobTitle;
     }
@@ -37,23 +39,30 @@ public class Employee extends User {
         return scalePoint;
     }
 
-    // Method to set a pending promotion
+    public void setJobTitle(String jobTitle){
+        this.jobTitle=jobTitle;
+    }
+
+    public void setScalePoint(int scalePoint){
+        this.scalePoint=scalePoint;
+    }
+    //Method to set a pending promotion
     public void setPendingPromotion(String newJobTitle) {
         this.pendingPromotion = newJobTitle;
         this.hasPendingPromotion = true;
     }
 
-    // Method to get the pending promotion title
+    //Method to get the pending promotion title
     public String getPendingPromotion() {
         return pendingPromotion;
     }
 
-    // Check if there is a pending promotion
+    //Check if there is a pending promotion
     public boolean hasPendingPromotion() {
         return hasPendingPromotion;
     }
 
-    // Method for the employee to confirm they have seen the promotion
+    //Method for the employee to confirm they have seen the promotion
     public void confirmPromotionSeen() {
         if (hasPendingPromotion) {
             System.out.println(name + " has seen the promotion to " + pendingPromotion + ".");

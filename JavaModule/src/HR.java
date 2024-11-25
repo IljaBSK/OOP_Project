@@ -9,43 +9,39 @@ public class HR extends User {
     }
 
     public void promoteEmployee() {
+        Scanner input = new Scanner(System.in);
 
-        //HR enters id after method promoteEmployee is called then opens csv file for the Employees and
-        //then promote from there changing jobType also create a reader and writer in CSVManger
-        //to open and change and write the differences also add a check for when a jobType
-        //entered doesn't exist also allow HR to change the Scalepoint
+        System.out.println("Enter the Employee ID to promote:");
+        String empID = input.nextLine().trim();
 
-        Scanner scanner = new Scanner(System.in);
-        //System.out.println("Promoting Employee: " + employee.getName());
-        //System.out.println("Current job title: " + employee.getJobTitle());
-        System.out.print("Enter new job title for promotion: ");
-        String newTitle = scanner.nextLine();
+        //Fetch employee data from CSV
+        Employee employee = CSVManager.getEmployeeByID(empID);
 
-        //employee.setPendingPromotion(newTitle);
-        //System.out.println("Promotion request sent for " + employee.getName() +
-          //      ". Awaiting their decision upon next login.");
-    }
+        if (employee != null) {
+            System.out.println("Current Details:");
+            System.out.println("Name: " + employee.getName());
+            System.out.println("Job Title: " + employee.getJobTitle());
+            System.out.println("Scale Point: " + employee.getScalePoint());
 
-    public void showHRMenu(Employee employee) {
-        Scanner scanner = new Scanner(System.in);
+            //Update job title
+            System.out.println("Enter new job title:");
+            String newJobTitle = input.nextLine().trim();
 
-        while (true) {
-            System.out.println("\nHR Menu:");
-            System.out.println("P)romote Employee");
-            System.out.println("E)xit");
-            System.out.print("Select an option: ");
-            String choice = scanner.nextLine().toUpperCase();
+            //Update scale point
+            System.out.println("Enter new scale point:");
+            int newScalePoint = input.nextInt();
+            input.nextLine(); // Consume the leftover newline
 
-            switch (choice) {
-                case "P":
-                    //promoteEmployee(employee);
-                    break;
-                case "E":
-                    System.out.println("Exiting HR system...");
-                    return; // Exit the menu
-                default:
-                    System.out.println("Invalid option. Please try again.");
-            }
+            //Update the employee details
+            employee.setJobTitle(newJobTitle);
+            employee.setScalePoint(newScalePoint);
+
+            //Write updated details back to CSV
+            CSVManager.updateEmployee(employee);
+
+            System.out.println("Employee promoted successfully.");
+        } else {
+            System.out.println("Employee not found with ID: " + empID);
         }
     }
 }
