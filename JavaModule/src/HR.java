@@ -8,16 +8,20 @@ public class HR extends User {
         super(username, password, jobType);
     }
 
-    public void promoteEmployee(Employee employee) {
+    public void promoteEmployee() {
+
+        //HR enters id after method called then opens csv file for the Employees and
+        //then promote from there
+
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Promoting Employee: " + employee.getName());
-        System.out.println("Current job title: " + employee.getJobTitle());
+        //System.out.println("Promoting Employee: " + employee.getName());
+        //System.out.println("Current job title: " + employee.getJobTitle());
         System.out.print("Enter new job title for promotion: ");
         String newTitle = scanner.nextLine();
 
-        employee.setPendingPromotion(newTitle);
-        System.out.println("Promotion request sent for " + employee.getName() +
-                ". Awaiting their decision upon next login.");
+        //employee.setPendingPromotion(newTitle);
+        //System.out.println("Promotion request sent for " + employee.getName() +
+          //      ". Awaiting their decision upon next login.");
     }
 
     public void showHRMenu(Employee employee) {
@@ -32,7 +36,7 @@ public class HR extends User {
 
             switch (choice) {
                 case "P":
-                    promoteEmployee(employee);
+                    //promoteEmployee(employee);
                     break;
                 case "E":
                     System.out.println("Exiting HR system...");
