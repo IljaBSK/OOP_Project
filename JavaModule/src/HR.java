@@ -10,8 +10,10 @@ public class HR extends User {
 
     public void promoteEmployee() {
 
-        //HR enters id after method called then opens csv file for the Employees and
-        //then promote from there
+        //HR enters id after method promoteEmployee is called then opens csv file for the Employees and
+        //then promote from there changing jobType also create a reader and writer in CSVManger
+        //to open and change and write the differences also add a check for when a jobType
+        //entered doesn't exist also allow HR to change the Scalepoint
 
         Scanner scanner = new Scanner(System.in);
         //System.out.println("Promoting Employee: " + employee.getName());
