@@ -1,4 +1,4 @@
-package JavaModule.src;
+package src;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 
 public class CSVManager {
-    private static final String filename = "ValidLogins.csv";
+    private static final String filename = "src/ValidLogins.csv";
 
 
     public static HashMap<String, User> readValidUsers() {

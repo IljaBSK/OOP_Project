@@ -1,4 +1,4 @@
-package JavaModule.src;
+package src;
 
 public class PaySlipCalculator {
     private SalaryScales salaryScales;

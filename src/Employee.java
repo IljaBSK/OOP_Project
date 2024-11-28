@@ -1,4 +1,4 @@
-package JavaModule.src;
+package src;
 
 public class Employee extends User {
 

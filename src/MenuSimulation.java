@@ -1,4 +1,4 @@
-package JavaModule.src;
+package src;
 
 import java.io.IOException;
 

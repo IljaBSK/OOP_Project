@@ -1,4 +1,5 @@
-package JavaModule.src;
+package src;
+
 import java.util.*;
 
 public class LoginSystem {
